@@ -11,12 +11,12 @@ import CoreData
 
 import UIKit
 
-class PMGoal{
+public class PMGoal{
     
     static let tableName = "Goal"
     
     @discardableResult
-    static func newGoal(category: String, achivement: Achievement, goalNum: Int32, below: Bool, appContext: NSManagedObjectContext) -> Goal{
+    public static func newGoal(category: String, achivement: Achievement, goalNum: Int32, below: Bool, appContext: NSManagedObjectContext) -> Goal{
         let context = appContext
         
         let goal = NSEntityDescription.insertNewObject(forEntityName: tableName, into: context) as! Goal
@@ -32,7 +32,7 @@ class PMGoal{
         return goal
     }
     
-    static func fetchAllGoal(appContext: NSManagedObjectContext) -> [Goal]{
+    public static func fetchAllGoal(appContext: NSManagedObjectContext) -> [Goal]{
         var goals: [Goal] = []
         
         let context = appContext
@@ -53,7 +53,7 @@ class PMGoal{
         
     }
     
-    static func verifyGoal(goal: Goal, appContext: NSManagedObjectContext) -> Bool{
+    public static func verifyGoal(goal: Goal, appContext: NSManagedObjectContext) -> Bool{
         
         let category = PMCategory.fetchByName(name: goal.category!, appContext: appContext)[0]
         
@@ -79,7 +79,7 @@ class PMGoal{
         
     }
     
-    static func saveContext(appContext: NSManagedObjectContext) {
+    public static func saveContext(appContext: NSManagedObjectContext) {
         let context = appContext
         
         do{
@@ -94,7 +94,7 @@ class PMGoal{
     }
     
     
-    static func deleteGoal(goal: Goal, appContext: NSManagedObjectContext){
+    public static func deleteGoal(goal: Goal, appContext: NSManagedObjectContext){
         let context = appContext
         context.delete(goal)
         

@@ -11,12 +11,12 @@ import CoreData
 
 import UIKit
 
-class PMUser{
+public class PMUser{
     
     static let tableName = "User"
     
     @discardableResult
-    static func newUser(appContext: NSManagedObjectContext) -> User{
+    public static func newUser(appContext: NSManagedObjectContext) -> User{
         let context = appContext
         
         let user = NSEntityDescription.insertNewObject(forEntityName: tableName, into: context) as! User
@@ -27,7 +27,7 @@ class PMUser{
         return user
     }
     
-    static func fetchAllUsers(appContext: NSManagedObjectContext) -> [User]{
+    public static func fetchAllUsers(appContext: NSManagedObjectContext) -> [User]{
         var users: [User] = []
         
         let context = appContext
@@ -48,7 +48,7 @@ class PMUser{
         
     }
     
-    static func fetchUser(appContext: NSManagedObjectContext) -> User{
+    public static func fetchUser(appContext: NSManagedObjectContext) -> User{
         var users: [User] = []
         
         let context = appContext
@@ -72,7 +72,7 @@ class PMUser{
     
     
     
-    static func saveContext(appContext: NSManagedObjectContext) {
+    public static func saveContext(appContext: NSManagedObjectContext) {
         let context = appContext
         
         do{
@@ -87,7 +87,7 @@ class PMUser{
     }
     
     
-    static func deleteUser(user: User, appContext: NSManagedObjectContext){
+    public static func deleteUser(user: User, appContext: NSManagedObjectContext){
         let context = appContext
         context.delete(user)
         

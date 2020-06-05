@@ -21,7 +21,7 @@ extension User {
     @NSManaged public var totSavings: Float
     
     
-    func getEcoPointsOfDay(appContext: NSManagedObjectContext) -> Int32{
+    public func getEcoPointsOfDay(appContext: NSManagedObjectContext) -> Int32{
         let tasks = PMDoneTask.fetchDoneTaskOfDay(appContext: appContext)
         
         var ecoPoints:Int32 = 0
@@ -33,7 +33,7 @@ extension User {
         return ecoPoints
     }
     
-    func getEcoPointsOfMonth(appContext: NSManagedObjectContext) -> Int32{
+    public func getEcoPointsOfMonth(appContext: NSManagedObjectContext) -> Int32{
         let tasks = PMDoneTask.fetchDoneTaskOfMonth(appContext: appContext)
           
           var ecoPoints:Int32 = 0
@@ -45,7 +45,7 @@ extension User {
           return ecoPoints
       }
     
-    func getSavingsOfDay(appContext: NSManagedObjectContext) -> Float{
+    public func getSavingsOfDay(appContext: NSManagedObjectContext) -> Float{
         let tasks = PMDoneTask.fetchDoneTaskOfDay(appContext: appContext)
         
         var savings:Float = 0.0
@@ -57,7 +57,7 @@ extension User {
         return savings
     }
     
-    func getSavingsOfMonth(appContext: NSManagedObjectContext) -> Float{
+    public func getSavingsOfMonth(appContext: NSManagedObjectContext) -> Float{
         let tasks = PMDoneTask.fetchDoneTaskOfMonth(appContext: appContext)
         
         var savings:Float = 0.0

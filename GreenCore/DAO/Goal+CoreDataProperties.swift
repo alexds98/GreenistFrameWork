@@ -24,7 +24,7 @@ extension Goal {
     @NSManaged public var achivement: Achievement?
     @NSManaged public var task: Task?
     
-    func checkDone(appContext: NSManagedObjectContext) -> Bool{
+    public func checkDone(appContext: NSManagedObjectContext) -> Bool{
         if(done){
             return true
         }else{

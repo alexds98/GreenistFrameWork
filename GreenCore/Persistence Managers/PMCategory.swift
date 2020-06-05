@@ -11,12 +11,12 @@ import CoreData
 
 import UIKit
 
-class PMCategory{
+public class PMCategory{
     
     static let tableName = "Category"
     
     @discardableResult
-    static func newCategory(imageName: String, name: String, appContext: NSManagedObjectContext) -> Category{
+    public static func newCategory(imageName: String, name: String, appContext: NSManagedObjectContext) -> Category{
         let context = appContext
         
         let category = NSEntityDescription.insertNewObject(forEntityName: tableName, into: context) as! Category
@@ -28,7 +28,7 @@ class PMCategory{
         return category
     }
     
-    static func fetchAllCategory(appContext: NSManagedObjectContext) -> [Category]{
+    public static func fetchAllCategory(appContext: NSManagedObjectContext) -> [Category]{
         var categories: [Category] = []
         
         let context = appContext
@@ -49,7 +49,7 @@ class PMCategory{
         
     }
     
-    static func fetchByName(name: String, appContext: NSManagedObjectContext) -> [Category]{
+    public static func fetchByName(name: String, appContext: NSManagedObjectContext) -> [Category]{
         var categories: [Category] = []
         
         let context = appContext
@@ -76,7 +76,7 @@ class PMCategory{
     }
     
     
-    static func saveContext(appContext: NSManagedObjectContext) {
+    public static func saveContext(appContext: NSManagedObjectContext) {
         let context = appContext
         
         do{
@@ -92,7 +92,7 @@ class PMCategory{
     
     
     
-    static func deleteCategory(category: Category, appContext: NSManagedObjectContext){
+    public static func deleteCategory(category: Category, appContext: NSManagedObjectContext){
         let context = appContext
         context.delete(category)
         

@@ -11,12 +11,12 @@ import CoreData
 
 import UIKit
 
-class PMDoneTask{
+public class PMDoneTask{
     
     static let tableName = "DoneTask"
     
     @discardableResult
-    static func newDoneTask(task: Task, appContext: NSManagedObjectContext) -> DoneTask{
+    public static func newDoneTask(task: Task, appContext: NSManagedObjectContext) -> DoneTask{
         let context = appContext
         
         let doneTask = NSEntityDescription.insertNewObject(forEntityName: tableName, into: context) as! DoneTask
@@ -26,7 +26,7 @@ class PMDoneTask{
         return doneTask
     }
     
-    static func fetchAllDoneTask(appContext: NSManagedObjectContext) -> [DoneTask]{
+    public static func fetchAllDoneTask(appContext: NSManagedObjectContext) -> [DoneTask]{
         var doneTasks: [DoneTask] = []
         
         let context = appContext
@@ -47,7 +47,7 @@ class PMDoneTask{
         
     }
     
-    static func fetchByTodayAndTask(task: Task, appContext: NSManagedObjectContext) -> [DoneTask]{
+    public static func fetchByTodayAndTask(task: Task, appContext: NSManagedObjectContext) -> [DoneTask]{
         
         
         
@@ -86,7 +86,7 @@ class PMDoneTask{
         
     }
     
-    static func fetchWeeklyTask(task: Task, appContext: NSManagedObjectContext) -> [DoneTask]{
+    public static func fetchWeeklyTask(task: Task, appContext: NSManagedObjectContext) -> [DoneTask]{
            
            var doneTasks: [DoneTask] = []
                   
@@ -132,7 +132,7 @@ class PMDoneTask{
            
        }
     
-    static func fetchDoneTaskOfDay(appContext: NSManagedObjectContext) -> [DoneTask]{
+    public static func fetchDoneTaskOfDay(appContext: NSManagedObjectContext) -> [DoneTask]{
                
                 var doneTasks: [DoneTask] = []
                              
@@ -170,7 +170,7 @@ class PMDoneTask{
            }
     
     
-    static func fetchDoneTaskOfMonth(appContext: NSManagedObjectContext) -> [DoneTask]{
+    public static func fetchDoneTaskOfMonth(appContext: NSManagedObjectContext) -> [DoneTask]{
         
          var doneTasks: [DoneTask] = []
                       
@@ -205,7 +205,7 @@ class PMDoneTask{
         
     }
     
-    static func fetchDoneTaskOfPreviousDay(task: Task, appContext: NSManagedObjectContext) -> [DoneTask]{
+    public static func fetchDoneTaskOfPreviousDay(task: Task, appContext: NSManagedObjectContext) -> [DoneTask]{
         
          var doneTasks: [DoneTask] = []
                       
@@ -243,7 +243,7 @@ class PMDoneTask{
         
     }
     
-    static func fetchDoneTaskOfPreviousWeek(task: Task, appContext: NSManagedObjectContext) -> [DoneTask]{
+    public static func fetchDoneTaskOfPreviousWeek(task: Task, appContext: NSManagedObjectContext) -> [DoneTask]{
            
             var doneTasks: [DoneTask] = []
                          
@@ -306,7 +306,7 @@ class PMDoneTask{
         
     }*/
     
-    static func saveContext(appContext: NSManagedObjectContext) {
+    public static func saveContext(appContext: NSManagedObjectContext) {
         let context = appContext
         
         do{
@@ -321,7 +321,7 @@ class PMDoneTask{
     }
     
     
-    static func deleteDoneTask(doneTask: DoneTask, appContext: NSManagedObjectContext){
+    public static func deleteDoneTask(doneTask: DoneTask, appContext: NSManagedObjectContext){
         let context = appContext
         context.delete(doneTask)
         

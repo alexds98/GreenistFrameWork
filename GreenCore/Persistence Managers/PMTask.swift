@@ -11,11 +11,11 @@ import Foundation
 
 import UIKit
 
-class PMTask {
+public class PMTask {
     
     static let tableName = "Task"
 
-    static func newTask(id: Int32, desc: String, ecoPoint: Int32, savings: Float, state: String, weekly: Bool, categoty: Category, appContext: NSManagedObjectContext) -> Task {
+    public static func newTask(id: Int32, desc: String, ecoPoint: Int32, savings: Float, state: String, weekly: Bool, categoty: Category, appContext: NSManagedObjectContext) -> Task {
         let context = appContext
 
         let task = NSEntityDescription.insertNewObject(forEntityName: tableName, into: context) as! Task
@@ -35,7 +35,7 @@ class PMTask {
         return task
     }
 
-    static func fetchAllTask(appContext: NSManagedObjectContext) -> [Task] {
+    public static func fetchAllTask(appContext: NSManagedObjectContext) -> [Task] {
         var task: [Task] = []
 
         let context = appContext
@@ -52,7 +52,7 @@ class PMTask {
         return task
     }
 
-    static func fetchUnselectedTask(_ withPriority: Bool = false, appContext: NSManagedObjectContext) -> [Task] {
+    public static func fetchUnselectedTask(_ withPriority: Bool = false, appContext: NSManagedObjectContext) -> [Task] {
         var tasks: [Task] = []
 
         let context = appContext
@@ -90,7 +90,7 @@ class PMTask {
         return tasks.filter { !$0.isChecked(appContext: appContext) }
     }
 
-    static func fetchById(id: Int32, appContext: NSManagedObjectContext) -> [Task] {
+    public static func fetchById(id: Int32, appContext: NSManagedObjectContext) -> [Task] {
         var task: [Task] = []
 
         let context = appContext
@@ -108,7 +108,7 @@ class PMTask {
         return task
     }
 
-    static func saveContext(appContext: NSManagedObjectContext) {
+    public static func saveContext(appContext: NSManagedObjectContext) {
         let context = appContext
 
         do {
@@ -119,7 +119,7 @@ class PMTask {
         }
     }
 
-    static func deleteTask(task: Task, appContext: NSManagedObjectContext) {
+    public static func deleteTask(task: Task, appContext: NSManagedObjectContext) {
         let context = appContext
         context.delete(task)
     }

@@ -24,11 +24,11 @@ extension Achievement {
     @NSManaged public var desc: String?
     @NSManaged public var goals: NSSet?
     
-    func getIcon() -> UIImage?{
+    public func getIcon() -> UIImage?{
         getIcon(saturated: self.unlocked)
     }
     
-    func getIcon(saturated: Bool) -> UIImage?{
+    public func getIcon(saturated: Bool) -> UIImage?{
         let iconName = self.image
         if(!saturated){
             return UIImage(named: iconName!+"MedalIconDesaturated")
@@ -48,7 +48,7 @@ extension Achievement {
 //         }
 //    }
     
-    func checkDone(appContext: NSManagedObjectContext) -> Bool{
+    public func checkDone(appContext: NSManagedObjectContext) -> Bool{
         
         if(self.unlocked){
             return true

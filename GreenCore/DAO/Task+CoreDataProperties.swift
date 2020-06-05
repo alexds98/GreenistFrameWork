@@ -27,7 +27,7 @@ extension Task {
     @NSManaged public var category: Category?
     @NSManaged public var goals: NSSet?
 
-    func getIcon(_ desaturated: Bool) -> UIImage? {
+    public func getIcon(_ desaturated: Bool) -> UIImage? {
         let iconName = category!.image
         if desaturated {
             return UIImage(named: iconName! + "_desaturated")
@@ -36,7 +36,7 @@ extension Task {
         }
     }
 
-    func check(appContext: NSManagedObjectContext) {
+    public func check(appContext: NSManagedObjectContext) {
         // newDoneTask has a @discardableResult
         PMDoneTask.newDoneTask(task: self, appContext: appContext)
         PMDoneTask.saveContext(appContext: appContext)
@@ -62,7 +62,7 @@ extension Task {
         }
     }
 
-    func unCheck(appContext: NSManagedObjectContext) {
+    public func unCheck(appContext: NSManagedObjectContext) {
         var doneTasks: [DoneTask]
 
         if weekly {
@@ -90,17 +90,17 @@ extension Task {
         PMUser.saveContext(appContext: appContext)
     }
 
-    func disable(appContext: NSManagedObjectContext) {
+    public func disable(appContext: NSManagedObjectContext) {
         state = "disabled"
         PMTask.saveContext(appContext: appContext)
     }
 
-    func enable(appContext: NSManagedObjectContext) {
+    public func enable(appContext: NSManagedObjectContext) {
         state = "enabled"
         PMTask.saveContext(appContext: appContext)
     }
 
-    func isChecked(appContext: NSManagedObjectContext) -> Bool {
+    public func isChecked(appContext: NSManagedObjectContext) -> Bool {
         if weekly {
             let doneTasks = PMDoneTask.fetchWeeklyTask(task: self, appContext: appContext)
 
@@ -119,7 +119,7 @@ extension Task {
         }
     }
 
-    func checkForPriority(appContext: NSManagedObjectContext) {
+    public func checkForPriority(appContext: NSManagedObjectContext) {
         if priority > 0 {
             var doneTasks: [DoneTask]
 

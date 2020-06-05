@@ -11,13 +11,13 @@ import CoreData
 
 import UIKit
 
-class PMAchievement{
+public class PMAchievement{
     
     static let tableName = "Achievement"
 
     
     @discardableResult
-    static func newAchievement(imageName: String, name: String, desc: String, appContext: NSManagedObjectContext) -> Achievement{
+    public static func newAchievement(imageName: String, name: String, desc: String, appContext: NSManagedObjectContext) -> Achievement{
         let context = appContext
         
         let achievement = NSEntityDescription.insertNewObject(forEntityName: tableName, into: context) as! Achievement
@@ -32,7 +32,7 @@ class PMAchievement{
         return achievement
     }
     
-    static func fetchAllAchievement(appContext: NSManagedObjectContext) -> [Achievement]{
+    public static func fetchAllAchievement(appContext: NSManagedObjectContext) -> [Achievement]{
         var achievements: [Achievement] = []
         
         let context = appContext
@@ -53,7 +53,7 @@ class PMAchievement{
         
     }
     
-    static func fetchByName(name: String, appContext: NSManagedObjectContext) -> [Achievement]{
+    public static func fetchByName(name: String, appContext: NSManagedObjectContext) -> [Achievement]{
            var achievements: [Achievement] = []
            
            let context = appContext
@@ -75,7 +75,7 @@ class PMAchievement{
            
        }
     
-    static func fetchLocked(appContext: NSManagedObjectContext) -> [Achievement]{
+    public static func fetchLocked(appContext: NSManagedObjectContext) -> [Achievement]{
         var achievements: [Achievement] = []
         
         let context = appContext
@@ -97,7 +97,7 @@ class PMAchievement{
         
     }
     
-    static func fetchUnlocked(appContext: NSManagedObjectContext) -> [Achievement]{
+    public static func fetchUnlocked(appContext: NSManagedObjectContext) -> [Achievement]{
         var achievements: [Achievement] = []
         
         let context = appContext
@@ -121,7 +121,7 @@ class PMAchievement{
     
     
     
-    static func saveContext(appContext: NSManagedObjectContext) {
+    public static func saveContext(appContext: NSManagedObjectContext) {
         let context = appContext
         
         do{
@@ -136,7 +136,7 @@ class PMAchievement{
     }
     
     
-    static func deleteAchievement(achievement: Achievement, appContext: NSManagedObjectContext){
+    public static func deleteAchievement(achievement: Achievement, appContext: NSManagedObjectContext){
         let context = appContext
         context.delete(achievement)
         
