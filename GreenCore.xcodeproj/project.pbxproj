@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B37016C248BDCB90006B8EE /* CustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37016B248BDCB90006B8EE /* CustomPersistentContainer.swift */; };
 		6BE9406A248A394800E6415F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE94069248A394800E6415F /* Constants.swift */; };
 		6BE94078248A396F00E6415F /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9406C248A396E00E6415F /* Goal+CoreDataProperties.swift */; };
 		6BE94079248A396F00E6415F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9406D248A396E00E6415F /* User+CoreDataProperties.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B37016B248BDCB90006B8EE /* CustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPersistentContainer.swift; sourceTree = "<group>"; };
 		6BE9404D248A388800E6415F /* GreenCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GreenCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE94064248A38D600E6415F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE94065248A38D600E6415F /* GreenCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreenCore.h; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B37016A248BA9F80006B8EE /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				6B37016B248BDCB90006B8EE /* CustomPersistentContainer.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		6BE94043248A388800E6415F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		6BE9404F248A388800E6415F /* GreenCore */ = {
 			isa = PBXGroup;
 			children = (
+				6B37016A248BA9F80006B8EE /* Core Data */,
 				6BE94068248A392100E6415F /* Constants */,
 				6BE94091248A39AF00E6415F /* Priority System */,
 				6BE94084248A397400E6415F /* Persistence Managers */,
@@ -227,6 +238,7 @@
 				6BE9408E248A399500E6415F /* PMUser.swift in Sources */,
 				6BE9408F248A399500E6415F /* PMDoneTask.swift in Sources */,
 				6BE9408C248A399500E6415F /* PMTask.swift in Sources */,
+				6B37016C248BDCB90006B8EE /* CustomPersistentContainer.swift in Sources */,
 				6BE94078248A396F00E6415F /* Goal+CoreDataProperties.swift in Sources */,
 				6BE94083248A396F00E6415F /* DoneTask+CoreDataClass.swift in Sources */,
 				6BE94082248A396F00E6415F /* User+CoreDataClass.swift in Sources */,
