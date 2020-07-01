@@ -25,7 +25,7 @@ public class StaticInit {
         
         tempTask = StaticTask(description: "Use (and re-use) a glass bottle instead of a plastic one", category: "spazzatura")
         tempTask2 = StaticTask(description: "Try producing only a bag of mixed waste", category: "spazzatura")
-        let spazzaturaCat = StaticCategory(name: "energia", tasks: [tempTask, tempTask2])
+        let spazzaturaCat = StaticCategory(name: "spazzatura", tasks: [tempTask, tempTask2])
         
         tempTask = StaticTask(description: "Use public transport instead of your car", category: "trasporto")
         tempTask2 = StaticTask(description: "Use your car only if all the seats are occupied", category: "trasporto")
